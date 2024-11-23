@@ -17,7 +17,7 @@ export default function NavBar(){
                 <div id="navbarLeft">
                     <img src={logo} alt="Logo Clerky" id="navbarLogoImage" />
                 </div>
-                <div id="navbarRight" className="flex flex-row center">
+                <div id="navbarRight" className="flex row-important center">
                     <div className="navButtons red" onClick={()=>nav("/report")}>
                         <i className="fa-solid fa-chart-pie"></i>
                     </div>
