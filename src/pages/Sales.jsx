@@ -1,9 +1,11 @@
 import Navbar from "../Components/Navbar";
 import ActionBox from "../Components/ActionBox";
+import BulkModal from "../pages/BulkModal";
 import { UserContext } from "../contexts/userContext";
 import { DateContext } from "../contexts/dateContext";
 import { useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
+
 
 export default function Sales() {
     const nav = useNavigate();
@@ -13,6 +15,7 @@ export default function Sales() {
     const [itemNames, setItemNames] = useState([]);
     const [rows, setRows] = useState([]);
     const [totalAmount, setTotalAmount] = useState(0);
+    const [bulkModal, setbulkModal] = useState(false);
 
     useEffect(() => {
         const fetchCompanies = async () => {
@@ -117,15 +120,26 @@ export default function Sales() {
         setTotalAmount(0);
     };
 
+    const handleBulkData = (bulkRows) => {
+        setRows(bulkRows);
+        calculateTotalAmount(bulkRows);
+    };
+
     return (
         <div id="dashboardContainer" className="Container flex flex-column">
             <Navbar />
             <div id="bodyContainer" className="flex flex-row">
+                {bulkModal && (<BulkModal onClose={()=>setbulkModal(false)} userId={userId} type="Sales" itemNameArray={itemNames} onBulkData={handleBulkData} />)}  
                 <div id="mainSection" className="flex flex-column">
                     <div id="headerSection" className="flex flex-row spaceBetween">
                         <div className="headerTitleCard flex flex-column">
                             <p className="titleTextNormal">Transaction Date</p>
                             <p className="headerText bold">{date}</p>
+                        </div>
+                        <div className="headerTitleCard flex flex-column">
+                            <button className="btnMini btnHalf blue" onClick={()=>setbulkModal(true)}>
+                                <i className="fa-solid fa-upload"></i> Bulk Upload
+                            </button>
                         </div>
                     </div>
 

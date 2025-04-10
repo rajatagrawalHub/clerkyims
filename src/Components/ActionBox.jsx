@@ -26,7 +26,7 @@ export default function ActionBox() {
     setcurrentDate(formattedDate)
     setcurrentTime(formattedTime)
   },[])
-
+  
   return (
     <div id="actionSection" className="flex flex-column">
         <div id="dateTimeSection" className="flex flex-column">

@@ -24,10 +24,6 @@ export default function NavBar(){
                     <div className="navButtons green" onClick={()=> nav("/")}>
                         <i className="fa-solid fa-home"></i>
                     </div>
-                    <div className="navButtons blue">
-                        <i className="fa-solid fa-sun"></i>
-                    </div>
-
                     <div className="navButtons darkBlue">
                         <i className="fa-solid fa-refresh" onClick={()=>window.location.reload()}></i>
                     </div>

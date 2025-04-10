@@ -45,7 +45,7 @@ export default function Dashboard() {
                     <div id="headerSection" className="flex flex-row spaceBetween">
                         <div className="headerTitleCard flex flex-column">
                             <p className="titleTextNormal">Current Period</p>
-                            <p className="headerText bold">01 Apr 2023 - 31 Mar 2024</p>
+                            <p className="headerText bold">01 Apr 2025 - 31 Mar 2026</p>
                         </div>
                         <div className="headerTitleCard flex flex-column">
                             <p className="titleTextNormal">Transaction Date</p>

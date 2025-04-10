@@ -513,6 +513,20 @@ align-self: flex-end;
     flex-direction: row;
 }
 
+i{
+    margin: 0 4px;
+}
+
+.gap-12{
+    gap: 12px;
+}
+
+#fileInput{
+    border: none;
+    margin: 0;
+    padding: 4px;
+}
+
 /* Media Query for Responsiveness */
 @media screen and (min-width: 320px) and (max-width: 768px) {
     .imageSection{
